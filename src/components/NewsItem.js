@@ -1,4 +1,5 @@
 import React from 'react'
+import SummarizeButton from './SummarizeButton'
 
 const NewsItem =(props)=> {
    let {title, description, imageUrl, newsUrl, author, date, source, category} = props;
@@ -37,6 +38,7 @@ const NewsItem =(props)=> {
             <p className="card-text">{description}</p>
              <p className="card-text"><small className={`fw-bold fst-italic ${props.darkMode ? "text-white-50" : "text-body-secondary"}`}> By {!author?"Unknown":author} on {new Date(date).toGMTString()} </small></p>
             <a href={newsUrl} target="_blank" rel="noreferrer" className={`btn btn-sm mt-2 ${props.darkMode ? "btn-outline-light" : "btn-dark"}`}>Read More</a>
+            <SummarizeButton text={title + ". " + description} darkMode={props.darkMode} />
           </div>
         </div> 
       </div>
